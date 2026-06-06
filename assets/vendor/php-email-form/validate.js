@@ -57,18 +57,19 @@
     })
     .then(response => {
       if( response.ok ) {
-        return response.text();
+        const contentType = response.headers.get('content-type') || '';
+        return contentType.includes('application/json') ? response.json() : response.text();
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
+      if ((typeof data === 'string' && data.trim() == 'OK') || (typeof data === 'object' && !data.error)) {
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        throw new Error(data.error || data.message || 'Form submission failed and no error message returned from: ' + action); 
       }
     })
     .catch((error) => {

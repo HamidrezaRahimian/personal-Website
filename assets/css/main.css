@@ -891,6 +891,82 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Projects Section
+--------------------------------------------------------------*/
+.projects .project-card {
+  height: 100%;
+  background: var(--surface-color);
+  box-shadow: 0px 5px 90px 0px color-mix(in srgb, var(--default-color), transparent 90%);
+  overflow: hidden;
+}
+
+.projects .project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.projects .project-card-content {
+  padding: 28px;
+}
+
+.projects .project-tag {
+  display: inline-block;
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.projects .project-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.projects .project-card p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 22px;
+}
+
+.projects .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.projects .project-link:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+/*--------------------------------------------------------------
+# Gallery Lightbox
+--------------------------------------------------------------*/
+.glightbox-container .gslide-media {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.glightbox-container .gslide-description {
+  background: color-mix(in srgb, var(--surface-color), transparent 5%);
+  border-top: 3px solid var(--accent-color);
+}
+
+.glightbox-container .gslide-title {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.glightbox-container .gslide-desc {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 15px;
+}
+
+/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
